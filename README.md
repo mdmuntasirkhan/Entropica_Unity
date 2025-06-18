@@ -3,4 +3,5 @@ It's an indie game project that we are currently working on. More description wi
 
 
 # Roles 
-3D Artist - Shakil Script Writer - Pranto
+3D Artist - Shakil 
+Script Writer - Pranto
