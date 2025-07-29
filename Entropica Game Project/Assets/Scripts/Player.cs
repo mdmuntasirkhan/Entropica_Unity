@@ -3,9 +3,11 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField]private Transform groundCheck;
+    [SerializeField]private LayerMask playerMask;
     private bool jump;
     private float horizontalInput;
     private Rigidbody rbComponent;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +32,12 @@ public class Player : MonoBehaviour
 
     // FixedUpdate is called at a fixed time interval, typically used for physics calculations.
     void FixedUpdate()
-    {   
+    {
+        if (Physics.OverlapSphere(groundCheck.position, 0.1f, playerMask).Length == 0)
+        {
+            return; // Exit if the player is not grounded (not touching the ground).   
+        }
+        
         if (jump)
         {
             rbComponent.AddForce(Vector3.up * 5, ForceMode.Impulse);
