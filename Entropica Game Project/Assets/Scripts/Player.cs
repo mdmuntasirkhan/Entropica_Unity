@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField]private Transform groundCheck;
     private bool jump;
     private float horizontalInput;
     private Rigidbody rbComponent;
