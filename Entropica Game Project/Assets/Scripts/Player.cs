@@ -33,6 +33,9 @@ public class Player : MonoBehaviour
     // FixedUpdate is called at a fixed time interval, typically used for physics calculations.
     void FixedUpdate()
     {
+        // Apply horizontal movement based on user input.
+        rbComponent.linearVelocity = new Vector3(horizontalInput * 5, rbComponent.linearVelocity.y, 0);
+        
         if (Physics.OverlapSphere(groundCheck.position, 0.1f, playerMask).Length == 0)
         {
             return; // Exit if the player is not grounded (not touching the ground).   
@@ -43,7 +46,5 @@ public class Player : MonoBehaviour
             rbComponent.AddForce(Vector3.up * 5, ForceMode.Impulse);
             jump = false; // Reset jump after applying force
         }
-        // Apply horizontal movement based on user input.
-        rbComponent.linearVelocity = new Vector3(horizontalInput * 5, rbComponent.linearVelocity.y, 0);
     }
 }
