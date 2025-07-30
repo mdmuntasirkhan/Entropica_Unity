@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField]private Transform groundCheck;
-    [SerializeField]private LayerMask playerMask;
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private LayerMask playerMask;
     private bool jump;
     private float horizontalInput;
     private Rigidbody rbComponent;
-    
+    private int superJumpCount = 0;
+
 
     // Start is called before the first frame update
     void Start()
@@ -35,16 +36,31 @@ public class Player : MonoBehaviour
     {
         // Apply horizontal movement based on user input.
         rbComponent.linearVelocity = new Vector3(horizontalInput * 5, rbComponent.linearVelocity.y, 0);
-        
+
         if (Physics.OverlapSphere(groundCheck.position, 0.1f, playerMask).Length == 0)
         {
             return; // Exit if the player is not grounded (not touching the ground).   
         }
-        
+
         if (jump)
         {
-            rbComponent.AddForce(Vector3.up * 5, ForceMode.Impulse);
+            float jumpForce = 5f; // Increase jump force based on super jump count
+            if (superJumpCount > 0)
+            {
+                jumpForce *= 2;
+                superJumpCount--; // Decrease super jump count after using it
+            }
+            rbComponent.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             jump = false; // Reset jump after applying force
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == 7)
+        {
+            Destroy(other.gameObject); // Destroy the object if it is on layer 7
+            superJumpCount++; // Increment the super jump count
         }
     }
 }
