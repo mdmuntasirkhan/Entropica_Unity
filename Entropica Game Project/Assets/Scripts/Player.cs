@@ -1,4 +1,6 @@
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Player : MonoBehaviour
 {
@@ -6,8 +8,9 @@ public class Player : MonoBehaviour
     [SerializeField] private LayerMask playerMask;
     private bool jump;
     private float horizontalInput;
-    private Rigidbody rbComponent;
     private int superJumpCount = 0;
+    private Rigidbody rbComponent;
+
 
 
     // Start is called before the first frame update
@@ -27,8 +30,6 @@ public class Player : MonoBehaviour
             Debug.Log("Space key was pressed!");
             jump = true;
         }
-        // Get horizontal input from the user (A/D keys or left/right arrows).
-        horizontalInput = Input.GetAxis("Horizontal");
     }
 
     // FixedUpdate is called at a fixed time interval, typically used for physics calculations.
@@ -63,4 +64,5 @@ public class Player : MonoBehaviour
             superJumpCount++; // Increment the super jump count
         }
     }
+
 }
