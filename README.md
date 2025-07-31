@@ -25,5 +25,5 @@ More details coming soon.
    * Launch Unity Hub, add the project folder.
    * Press **Play** in the Editor.
 ## Screenshots
-![Gameplay Screenshot](Screenshot/gameplay1.png)
+![Gameplay Screenshot](./Screenshots/gameplay1.png)
 *More content (story, controls, features) will be added shortly!*
