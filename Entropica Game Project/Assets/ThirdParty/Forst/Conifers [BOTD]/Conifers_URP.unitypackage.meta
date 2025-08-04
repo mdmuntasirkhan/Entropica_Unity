@@ -1,11 +1,7 @@
 fileFormatVersion: 2
-guid: a763f5a1ec8fa1746bec38f0547741ab
-MonoImporter:
+guid: 9567f054637bcab479de2f96d0e368be
+DefaultImporter:
   externalObjects: {}
-  serializedVersion: 2
-  defaultReferences: []
-  executionOrder: 0
-  icon: {instanceID: 0}
   userData: 
   assetBundleName: 
   assetBundleVariant: 
@@ -14,5 +10,5 @@ AssetOrigin:
   productId: 142076
   packageName: 'Conifers [BOTD]'
   packageVersion: 2.01
-  assetPath: Assets/Forst/Conifers [BOTD]/Installer/Editor/LaunchConifersInstaller.cs
+  assetPath: Assets/Forst/Conifers [BOTD]/Conifers_URP.unitypackage
   uploadId: 649803
