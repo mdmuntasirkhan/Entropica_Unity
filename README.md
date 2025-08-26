@@ -8,7 +8,7 @@ More details coming soon.
 
 ## Roles
 
-* **3D Artist:** Shakil
+* **3D Artist:** 
 * **Script Writer:** Pranto
 * **Lead Programmer:** Md Muntasir Khan
 
