@@ -1,4 +1,4 @@
-# Entropica
+# Entropica (Unity)
 
 *An indie sci‑fi survival RPG set in a dynamic, ever‑changing forest.*
 
